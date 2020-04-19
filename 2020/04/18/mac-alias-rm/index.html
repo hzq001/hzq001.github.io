@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="今天对gitlab进行升级，发现还是比较方便对。我这边是使用 docker 来部署gitlab。查看了官网文档进行升级     更新日志  官网docker部署   直接拉取最新的docker镜像，按照官方进行部署   停止现有容器1docker stop gitlab 删除现有容器1docker rm gitlab 部署123456789sudo docker run --detach \">
+  <meta name="description" content="上次误删rm -rf写了自己的项目，也没有备份。使用了一些文件恢复程序也没有用。于是就想使用trash代替rm，把文件放入到废纸篓🗑️中这样就可以还原文件不怕误删。  trash，作者博客是通过Finder来删除文件，这样文件就会放到废纸篓了  设置别名 安装trash,需要先安装brew,juti11brew install trash 设置trash的别名为rm123vim ~&#x2F;.bash_">
 <meta property="og:type" content="article">
-<meta property="og:title" content="gitlab-update">
-<meta property="og:url" content="http://yoursite.com/2020/04/17/gitlab-update/index.html">
+<meta property="og:title" content="mac-alias-rm">
+<meta property="og:url" content="http://yoursite.com/2020/04/18/mac-alias-rm/index.html">
 <meta property="og:site_name" content="Hzq">
-<meta property="og:description" content="今天对gitlab进行升级，发现还是比较方便对。我这边是使用 docker 来部署gitlab。查看了官网文档进行升级     更新日志  官网docker部署   直接拉取最新的docker镜像，按照官方进行部署   停止现有容器1docker stop gitlab 删除现有容器1docker rm gitlab 部署123456789sudo docker run --detach \">
+<meta property="og:description" content="上次误删rm -rf写了自己的项目，也没有备份。使用了一些文件恢复程序也没有用。于是就想使用trash代替rm，把文件放入到废纸篓🗑️中这样就可以还原文件不怕误删。  trash，作者博客是通过Finder来删除文件，这样文件就会放到废纸篓了  设置别名 安装trash,需要先安装brew,juti11brew install trash 设置trash的别名为rm123vim ~&#x2F;.bash_">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-04-17T09:47:33.000Z">
+<meta property="article:published_time" content="2020-04-18T01:39:55.000Z">
 <meta property="article:modified_time" content="2020-04-19T02:55:26.381Z">
 <meta property="article:author" content="Hzq">
-<meta property="article:tag" content="gitlab">
+<meta property="article:tag" content="mac">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/04/17/gitlab-update/">
+<link rel="canonical" href="http://yoursite.com/2020/04/18/mac-alias-rm/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>gitlab-update | Hzq</title>
+  <title>mac-alias-rm | Hzq</title>
   
 
 
@@ -152,7 +152,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/17/gitlab-update/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/18/mac-alias-rm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -165,7 +165,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          gitlab-update
+          mac-alias-rm
         </h1>
 
         <div class="post-meta">
@@ -175,7 +175,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-04-17 17:47:33" itemprop="dateCreated datePublished" datetime="2020-04-17T17:47:33+08:00">2020-04-17</time>
+              <time title="创建时间：2020-04-18 09:39:55" itemprop="dateCreated datePublished" datetime="2020-04-18T09:39:55+08:00">2020-04-18</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -196,37 +196,30 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <ul>
-<li>今天对<strong>gitlab</strong>进行升级，发现还是比较方便对。我这边是使用 docker 来部署<strong>gitlab</strong>。查看了官网文档进行升级</li>
-</ul>
+        <p>上次误删<code>rm -rf</code>写了自己的项目，也没有备份。使用了一些文件恢复程序也没有用。于是就想使用<strong>trash</strong>代替<strong>rm</strong>，把文件放入到废纸篓🗑️中这样就可以还原文件不怕误删。</p>
 <blockquote>
+<p><a href="https://hasseg.org/trash/" target="_blank" rel="noopener">trash</a>，<a href="http://hasseg.org/blog/post/406/trash-files-from-the-os-x-command-line/" target="_blank" rel="noopener">作者博客</a>是通过<strong>Finder</strong>来删除文件，这样文件就会放到废纸篓了</p>
 </blockquote>
-<ul>
-<li><a href="https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/CHANGELOG.md" target="_blank" rel="noopener">更新日志</a> </li>
-<li><a href="https://docs.gitlab.com/omnibus/docker/" target="_blank" rel="noopener">官网docker部署</a></li>
-</ul>
-<ul>
-<li>直接拉取最新的<strong>docker</strong>镜像，按照官方进行部署</li>
-</ul>
-<ol>
-<li>停止现有容器<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop gitlab</span><br></pre></td></tr></table></figure></li>
-<li>删除现有容器<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm gitlab</span><br></pre></td></tr></table></figure></li>
-<li>部署<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --detach \</span><br><span class="line">  --hostname gitlab.example.com \</span><br><span class="line">  --publish 443:443 --publish 80:80 --publish 22:22 \</span><br><span class="line">  --name gitlab \</span><br><span class="line">  --restart always \</span><br><span class="line">  --volume <span class="variable">$GITLAB_HOME</span>/gitlab/config:/etc/gitlab \</span><br><span class="line">  --volume <span class="variable">$GITLAB_HOME</span>/gitlab/logs:/var/<span class="built_in">log</span>/gitlab \</span><br><span class="line">  --volume <span class="variable">$GITLAB_HOME</span>/gitlab/data:/var/opt/gitlab \</span><br><span class="line">  gitlab/gitlab-ce:latest</span><br></pre></td></tr></table></figure>
+<h2 id="设置别名"><a href="#设置别名" class="headerlink" title="设置别名"></a>设置别名</h2><ol>
+<li>安装<strong>trash</strong>,需要先安装<strong>brew</strong>,juti1<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install trash</span><br></pre></td></tr></table></figure></li>
+<li>设置<strong>trash</strong>的别名为<strong>rm</strong><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 文件底部添加</span></span><br><span class="line">alias rm = "trash -F"</span><br></pre></td></tr></table></figure>
 <blockquote>
-<ul>
-<li>其中 <strong>$GITLAB_HOME</strong> 就是服务器中外挂文件的地址。</li>
-</ul>
+<p>设置 <code>-F</code> 放到废纸篓的文件才有放回原处。</p>
 </blockquote>
-<ul>
-<li><code>gitlab.example.com</code> 指访问的地址，使用ip访问不设域名可以直接设置ip地址</li>
-<li>这里使用<code>--publish 80:80</code>会占用到<code>ssh</code>的端口，需要更改服务器的设置，把<code>ssh</code>的端口变更到其他端口</li>
-<li><code>--restart always</code> 会睡着<strong>docker</strong>启动</li>
-<li><code>gitlab-ce:latest</code> 最新的镜像，也可指定想要升级的版本</li>
-</ul>
 </li>
+<li>使命令生效<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
 </ol>
 <ul>
-<li>这边需要注意的点是<code>gitlab</code>会自动升级，不需要再进行设置</li>
+<li>这样使用<strong>rm</strong>实际执行的是<strong>trash</strong>。到这边一步执行是有问题的，重新启动终端的化就会失效，这里需要另外设置下才可以一直有效</li>
+</ul>
+<h2 id="设置别名一直有效"><a href="#设置别名一直有效" class="headerlink" title="设置别名一直有效"></a>设置别名一直有效</h2><ol>
+<li>新建<strong>bashrc</strong>文件,添加<code>alias rm = &quot;trash -F&quot;</code>到底部<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bashrc </span><br><span class="line">alias rm = "trash -F"</span><br></pre></td></tr></table></figure></li>
+<li>在<strong>bash_profile</strong> 添加使<strong>bashrc</strong>生效的命令。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim ~&#x2F;.bash_profile;</span><br><span class="line">source ~&#x2F;.bashrc</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>到这一步使用<code>bash</code>的就算重新打开终端<strong>alias</strong>也是有效，但是使用了<strong>zsh</strong>的就不行了。<h2 id="zsh使用"><a href="#zsh使用" class="headerlink" title="zsh使用"></a><strong>zsh</strong>使用</h2></li>
+<li>创建<strong>zshrc</strong> 文件，将使<code>bash_profile</code>生效的命令写入，这样使用<strong>zsh</strong>的也就都可以了<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim zshrc </span><br><span class="line"><span class="built_in">test</span> -f ~/.bash_profile  &amp;&amp; <span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 
     </div>
@@ -237,7 +230,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/gitlab/" rel="tag"># gitlab</a>
+              <a href="/tags/mac/" rel="tag"># mac</a>
           </div>
 
         
@@ -246,13 +239,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2018/05/08/mysql-page/" rel="prev" title="mysql 中的大数据量分页优化">
-      <i class="fa fa-chevron-left"></i> mysql 中的大数据量分页优化
+    <a href="/2020/04/17/gitlab-update/" rel="prev" title="gitlab-update">
+      <i class="fa fa-chevron-left"></i> gitlab-update
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/04/18/mac-alias-rm/" rel="next" title="mac-alias-rm">
-      mac-alias-rm <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -311,6 +301,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#设置别名"><span class="nav-number">1.</span> <span class="nav-text">设置别名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置别名一直有效"><span class="nav-number">2.</span> <span class="nav-text">设置别名一直有效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zsh使用"><span class="nav-number">3.</span> <span class="nav-text">zsh使用</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

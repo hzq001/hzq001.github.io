@@ -150,6 +150,95 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/18/mac-alias-rm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hzq">
+      <meta itemprop="description" content="My blog java react">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hzq">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/18/mac-alias-rm/" class="post-title-link" itemprop="url">mac-alias-rm</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-18 09:39:55" itemprop="dateCreated datePublished" datetime="2020-04-18T09:39:55+08:00">2020-04-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-19 10:55:26" itemprop="dateModified" datetime="2020-04-19T10:55:26+08:00">2020-04-19</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>上次误删<code>rm -rf</code>写了自己的项目，也没有备份。使用了一些文件恢复程序也没有用。于是就想使用<strong>trash</strong>代替<strong>rm</strong>，把文件放入到废纸篓🗑️中这样就可以还原文件不怕误删。</p>
+<blockquote>
+<p><a href="https://hasseg.org/trash/" target="_blank" rel="noopener">trash</a>，<a href="http://hasseg.org/blog/post/406/trash-files-from-the-os-x-command-line/" target="_blank" rel="noopener">作者博客</a>是通过<strong>Finder</strong>来删除文件，这样文件就会放到废纸篓了</p>
+</blockquote>
+<h2 id="设置别名"><a href="#设置别名" class="headerlink" title="设置别名"></a>设置别名</h2><ol>
+<li>安装<strong>trash</strong>,需要先安装<strong>brew</strong>,juti1<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install trash</span><br></pre></td></tr></table></figure></li>
+<li>设置<strong>trash</strong>的别名为<strong>rm</strong><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 文件底部添加</span></span><br><span class="line">alias rm = "trash -F"</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>设置 <code>-F</code> 放到废纸篓的文件才有放回原处。</p>
+</blockquote>
+</li>
+<li>使命令生效<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>这样使用<strong>rm</strong>实际执行的是<strong>trash</strong>。到这边一步执行是有问题的，重新启动终端的化就会失效，这里需要另外设置下才可以一直有效</li>
+</ul>
+<h2 id="设置别名一直有效"><a href="#设置别名一直有效" class="headerlink" title="设置别名一直有效"></a>设置别名一直有效</h2><ol>
+<li>新建<strong>bashrc</strong>文件,添加<code>alias rm = &quot;trash -F&quot;</code>到底部<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bashrc </span><br><span class="line">alias rm = "trash -F"</span><br></pre></td></tr></table></figure></li>
+<li>在<strong>bash_profile</strong> 添加使<strong>bashrc</strong>生效的命令。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim ~&#x2F;.bash_profile;</span><br><span class="line">source ~&#x2F;.bashrc</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>到这一步使用<code>bash</code>的就算重新打开终端<strong>alias</strong>也是有效，但是使用了<strong>zsh</strong>的就不行了。<h2 id="zsh使用"><a href="#zsh使用" class="headerlink" title="zsh使用"></a><strong>zsh</strong>使用</h2></li>
+<li>创建<strong>zshrc</strong> 文件，将使<code>bash_profile</code>生效的命令写入，这样使用<strong>zsh</strong>的也就都可以了<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim zshrc </span><br><span class="line"><span class="built_in">test</span> -f ~/.bash_profile  &amp;&amp; <span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/17/gitlab-update/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -181,7 +270,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-18 08:46:14" itemprop="dateModified" datetime="2020-04-18T08:46:14+08:00">2020-04-18</time>
+                <time title="修改时间：2020-04-19 10:55:26" itemprop="dateModified" datetime="2020-04-19T10:55:26+08:00">2020-04-19</time>
               </span>
 
           
@@ -277,7 +366,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-18 08:46:14" itemprop="dateModified" datetime="2020-04-18T08:46:14+08:00">2020-04-18</time>
+                <time title="修改时间：2020-04-19 10:55:26" itemprop="dateModified" datetime="2020-04-19T10:55:26+08:00">2020-04-19</time>
               </span>
 
           
@@ -345,7 +434,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-18 08:46:14" itemprop="dateModified" datetime="2020-04-18T08:46:14+08:00">2020-04-18</time>
+                <time title="修改时间：2020-04-19 10:55:26" itemprop="dateModified" datetime="2020-04-19T10:55:26+08:00">2020-04-19</time>
               </span>
 
           
@@ -444,12 +533,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
